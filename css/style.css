@@ -1,0 +1,103 @@
+/* Основен стил */
+:root {
+    --primary: #2c3e50;    /* Тъмно синьо за навигация */
+    --accent: #3498db;     /* Светло синьо за бутони */
+    --success: #27ae60;    /* Зелено за активни задачи */
+    --danger: #e74c3c;     /* Червено за важни неща */
+    --bg: #f4f7f6;         /* Светло сив фон */
+    --text: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнер */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: var(--primary);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+header h1 { margin: 0; font-size: 2.5rem; }
+
+/* Навигация */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background: var(--accent);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover { background: #2980b9; }
+
+/* Карти за задачите */
+.task-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-left: 8px solid #ccc;
+    position: relative;
+}
+
+.task-card.active { border-left-color: var(--success); }
+.task-card.locked { border-left-color: #95a5a6; opacity: 0.7; }
+
+.status-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-active { background: #d4edda; color: #155724; }
+.status-locked { background: #f8d7da; color: #721c24; }
+
+/* Бутони */
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn:hover { background: #2980b9; }
+
+/* Мобилна версия */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    nav { flex-direction: column; align-items: center; }
+}
