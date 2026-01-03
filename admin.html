@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ Панел</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-box { background: white; padding: 30px; border-radius: 10px; max-width: 400px; margin: 50px auto; shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="login-section" class="admin-box">
+            <h2>Вход</h2>
+            <input type="password" id="pass" placeholder="Въведи парола">
+            <button class="btn" onclick="checkPass()">Влез</button>
+        </div>
+
+        <div id="control-section" class="container" style="display:none;">
+            <h1>Управление на задачите</h1>
+            <div class="task-card active">
+                <h3>Инструкция за теб:</h3>
+                <p>Тъй като сме на статичен хостинг (Netlify), най-лесният начин да активираш задача за всички е да промениш една дума в кода през GitHub. Но тук можеш да си генерираш кода за копиране.</p>
+                <hr>
+                <button class="btn" onclick="toggleTask('7a')">Генерирай статус за 7А</button>
+                <p id="status-7a">Текущ статус в кода: <b>Active</b></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkPass() {
+            const pass = document.getElementById('pass').value;
+            if(pass === 'test') { // Смени това с твоя парола
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('control-section').style.display = 'block';
+            } else {
+                alert('Грешна парола!');
+            }
+        }
+    </script>
+</body>
+</html>
