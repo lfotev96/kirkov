@@ -21,7 +21,24 @@
     <p>Задачата е активна! Изтеглете файла и започнете работа.</p>
     <a href="resursi/test.txt" class="btn">⬇ Свали ресурсен файл</a>
     <hr>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnFjBvgVEUhw_mPnWug8R7xXo3Ey_OqLNu3IFyps_Fcb5fdw/viewform?usp=sharing&ouid=103428359256178452706" width="100%" height="500" frameborder="0"></iframe>
+    <div class="task-card active">
+    <h2>📤 Предай своя проект (7А)</h2>
+    <p>Използвай формата по-долу, за да изпратиш готовия файл.</p>
+
+    <form name="kmit-7a" method="POST" data-netlify="true" enctype="multipart/form-data" action="/success.html">
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Име и Фамилия:</label>
+            <input type="text" name="student_name" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Избери файл за качване:</label>
+            <input type="file" name="project_file" required style="width: 100%;">
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; font-weight: bold; cursor: pointer;">ИЗПРАТИ ПРОЕКТА</button>
+    </form>
+</div>
 </div>
 
 <div id="locked-msg" class="task-card locked">
